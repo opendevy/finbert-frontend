@@ -5,9 +5,14 @@ import "./styles.css";
 
 const Sentiment = () => {
   const [query, setQuery] = useState("");
-  const [response, setResponse] = useState(responseJson);
+  const [days, setDays] = useState(2);
+  const [limit, setLimit] = useState(5);
+  const [response, setResponse] = useState(null);
   const handleSearchButtonClick = async (event) => {
-    console.log(event);
+    const data = (
+      await httpService.get(`/news-analysis/${query}/${days}/${limit}`)
+    ).data;
+    setResponse(data);
   };
 
   return (
@@ -25,6 +30,20 @@ const Sentiment = () => {
               type="text"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
+            />
+          </div>
+          <div className="row-input">
+            <label className="label" htmlFor="newspaper-limit">
+              News Papers Limit
+            </label>
+            <input
+              id="newspaper-limit"
+              type="number"
+              value={limit}
+              onChange={(event) => setLimit(event.target.value)}
+              min={0}
+              max={30}
+              step={1}
             />
           </div>
           <div className="search-button">
