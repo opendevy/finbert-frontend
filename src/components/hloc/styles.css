@@ -29,3 +29,14 @@
 .info {
   margin-left: 20px;
 }
+
+.info-data {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: left;
+}
+
+.info-data-row {
+  margin-bottom: 10px;
+}

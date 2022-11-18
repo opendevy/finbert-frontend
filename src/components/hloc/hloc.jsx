@@ -1,11 +1,31 @@
 import React, { useState } from "react";
+import httpService from "../../services/http.service";
 import "./styles.css";
 
 const Hloc = () => {
   const [symbol, setSymbol] = useState("");
-  const handleSearchButtonClick = () => {
+  const [dailyData, setDailyData] = useState({
+    title: null,
+    high: null,
+    low: null,
+    close: null,
+    open: null,
+    volume: null,
+  });
+  const handleSearchButtonClick = async () => {
+    const data = (await httpService.get(`stocks/${symbol}/1d`)).data.response;
     console.log(symbol);
+    console.log(data);
+    setDailyData({
+      title: symbol,
+      open: data[1][0],
+      high: data[1][1],
+      low: data[1][2],
+      close: data[1][3],
+      volume: data[1][4],
+    });
   };
+
   return (
     <div className="hloc">
       <div className="form">
@@ -27,7 +47,57 @@ const Hloc = () => {
           </div>
         </div>
         <div className="info">
-          <h1>{symbol}</h1>
+          {dailyData.title && (
+            <div className="info-data">
+              <h1>{dailyData.title}</h1>
+              <div className="info-data-row">
+                <label className="label" htmlFor="symbol-input">
+                  Open
+                </label>
+                <input
+                  type="text"
+                  value={`$ ${dailyData.open}`}
+                  disabled={true}
+                />
+              </div>
+              <div className="info-data-row">
+                <label className="label" htmlFor="symbol-input">
+                  Close
+                </label>
+                <input
+                  type="text"
+                  value={`$ ${dailyData.close}`}
+                  disabled={true}
+                />
+              </div>
+              <div className="info-data-row">
+                <label className="label" htmlFor="symbol-input">
+                  High
+                </label>
+                <input
+                  type="text"
+                  value={`$ ${dailyData.high}`}
+                  disabled={true}
+                />
+              </div>
+              <div className="info-data-row">
+                <label className="label" htmlFor="symbol-input">
+                  Low
+                </label>
+                <input
+                  type="text"
+                  value={`$ ${dailyData.low}`}
+                  disabled={true}
+                />
+              </div>
+              <div className="info-data-row">
+                <label className="label" htmlFor="symbol-input">
+                  Volume
+                </label>
+                <input type="text" value={dailyData.volume} disabled={true} />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
