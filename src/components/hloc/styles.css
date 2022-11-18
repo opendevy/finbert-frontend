@@ -1,0 +1,31 @@
+.hloc {
+  margin: 55px 5px 5px 5px;
+  border-radius: 20px;
+  background-color: aliceblue;
+}
+
+.form {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding-bottom: 20px;
+}
+
+.form-info {
+  margin: 5px;
+  text-align: left;
+}
+
+.label {
+  margin-right: 5px;
+}
+
+.search-button {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+}
+
+.info {
+  margin-left: 20px;
+}
