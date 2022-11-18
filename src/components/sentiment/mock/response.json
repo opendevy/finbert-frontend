@@ -1,0 +1,40 @@
+[
+  [
+    [
+      "Stock market news live updates: Stocks slide as investors face medley of Fedspeak and earnings - Yahoo Canada Finance"
+    ],
+    [
+      {
+        "label": "negative",
+        "score": 0.9587559103965759
+      },
+      {
+        "label": "neutral",
+        "score": 0.03388221561908722
+      },
+      {
+        "label": "positive",
+        "score": 0.00736191077157855
+      }
+    ]
+  ],
+  [
+    [
+      "Stock market news live updates: Stock futures slip amid medley of earnings, economic data and Fedspeak"
+    ],
+    [
+      {
+        "label": "negative",
+        "score": 0.9690069556236267
+      },
+      {
+        "label": "neutral",
+        "score": 0.02306809462606907
+      },
+      {
+        "label": "positive",
+        "score": 0.007925036363303661
+      }
+    ]
+  ]
+]
