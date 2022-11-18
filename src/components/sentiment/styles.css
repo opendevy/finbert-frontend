@@ -40,3 +40,16 @@
 .info-data-row {
   margin-bottom: 10px;
 }
+
+.table,
+.td,
+.tr {
+  margin: 50px 30px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.row-input {
+  display: flex;
+  flex-direction: row;
+}

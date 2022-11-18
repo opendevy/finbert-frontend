@@ -16,15 +16,17 @@ const Sentiment = () => {
         <div className="form-info">
           <h1>Sentiment</h1>
           <p>Search Sentiments in News</p>
-          <label className="label" htmlFor="query-input">
-            Search
-          </label>
-          <input
-            id="query-input"
-            type="text"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-          />
+          <div className="row-input">
+            <label className="label" htmlFor="query-input">
+              Search
+            </label>
+            <input
+              id="query-input"
+              type="text"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+            />
+          </div>
           <div className="search-button">
             <button onClick={handleSearchButtonClick}>Search</button>
           </div>
@@ -32,13 +34,15 @@ const Sentiment = () => {
         <div className="info">
           {response && (
             <table className="table">
-              {console.log(response)}
-              {response.map((item, id) => (
-                <tr key={id}>
-                  <td>{item[0][0]}</td>
-                  <td>{item[1][0].label}</td>
-                </tr>
-              ))}
+              <tbody>
+                {console.log(response)}
+                {response.map((item, id) => (
+                  <tr className="tr" key={id}>
+                    <td className="td">{item[0][0]}</td>
+                    <td className="td">{item[1][0].label}</td>
+                  </tr>
+                ))}
+              </tbody>
             </table>
           )}
         </div>
