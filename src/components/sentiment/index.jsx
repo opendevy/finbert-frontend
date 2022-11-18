@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import httpService from "../../services/http.service";
-import responseJson from "./mock/response.json";
+// import responseJson from "./mock/response.json";
 import "./styles.css";
 
 const Sentiment = () => {
