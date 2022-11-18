@@ -1,0 +1,13 @@
+.layout-two-column {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 20px;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}

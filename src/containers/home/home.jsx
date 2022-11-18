@@ -8,8 +8,16 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <Hloc />
-      <Sentiment />
+      <div className="layout-two-column">
+        <div className="column">
+          <Hloc />
+          <Sentiment />
+        </div>
+        <div className="column">
+          <Hloc />
+          <Sentiment />
+        </div>
+      </div>
     </div>
   );
 };
