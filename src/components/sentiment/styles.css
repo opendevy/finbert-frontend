@@ -54,3 +54,8 @@
   flex-direction: row;
   margin-bottom: 20px;
 }
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+}
