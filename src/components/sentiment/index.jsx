@@ -5,7 +5,7 @@ import "./styles.css";
 
 const Sentiment = () => {
   const [query, setQuery] = useState("");
-  const [days, setDays] = useState(5);
+  const [days, setDays] = useState(30);
   const [limit, setLimit] = useState(5);
   const [nextStep, setNextStep] = useState(null);
   const [response, setResponse] = useState(null);
@@ -26,6 +26,7 @@ const Sentiment = () => {
     return (
       <div className="info-column">
         <div className="info">
+          <h3>Sentiments</h3>
           {nextStep && (
             <table className="table">
               <tbody>
@@ -41,6 +42,7 @@ const Sentiment = () => {
           )}
         </div>
         <div className="info">
+          <h3>Insights</h3>
           {response && (
             <table className="table">
               <tbody>
