@@ -101,6 +101,7 @@ const Sentiment = () => {
         ) : (
           <div className="info">
             <h1>Loading...</h1>
+            <p>Please wait for 5 minutes</p>
           </div>
         )}
       </div>
